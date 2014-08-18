@@ -16,24 +16,24 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offers = Offer.find(params[:id])
+    @offers = Offer.find(offer_params[:id])
   end
 
   def edit
-    @offers = Offer.find(params [:id])
+    @offers = Offer.find(offer_params[:id])
   end
 
   def update
-    @offers = Offer.find(params[:id])
+    @offers = Offer.find(offer_params[:id])
     @offers.update(offer_params)
     flash[:notice] = "Offer has been updated"
   end
 
   def destroy
-    @offers = Offer.find(params[:id])
+    @offers = Offer.find(offer_params[:id])
     @offers.destroy
     flash [:notice] = 'Offer has been deleted'
-    redirect_to offers_path
+
   end
 
 
