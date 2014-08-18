@@ -3,14 +3,15 @@ class BikesController < ApplicationController
      @bikes = Bike.all
   end
 
+  def new
+    @bike = Bike.new
+  end
+
   def create
     Bike.create(bike_params)
     redirect_to bikes_path
   end
 
-  def new
-    @bike = Bike.new
-  end
 
   def show
     @bike = Bike.find(bike_params[:id])
