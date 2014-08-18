@@ -29,7 +29,7 @@ class BikesController < ApplicationController
   end
 
   def destroy
-    @bike = bike.find(bike_params[:id])
+    @bike = Bike.find(bike_params[:id])
     @bike.destroy
     flash[:notice] = "Bike was destroyed"
     redirect_to bike_path
