@@ -12,7 +12,6 @@ class BikesController < ApplicationController
     redirect_to bikes_path
   end
 
-
   def show
     @bike = Bike.find(bike_params[:id])
   end
@@ -37,8 +36,9 @@ class BikesController < ApplicationController
   end
 
   private
+
   def bike_params
-  params.require(:bike).permit(:brand, :type, :condition, :size )
+    params.require(:bike).permit(:brand, :type, :condition, :size)
   end
 
 end
