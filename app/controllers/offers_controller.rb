@@ -12,7 +12,7 @@ class OffersController < ApplicationController
   def create
     @offers = Offer.new(offer_params)
     @offer.save
-    flash [:notice] ='Offer has been created'
+    flash[:notice] ='Offer has been created'
   end
 
   def show
@@ -32,7 +32,7 @@ class OffersController < ApplicationController
   def destroy
     @offers = Offer.find(offer_params[:id])
     @offers.destroy
-    flash [:notice] = 'Offer has been deleted'
+    flash[:notice] = 'Offer has been deleted'
 
   end
 
