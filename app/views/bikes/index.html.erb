@@ -1,1 +1,16 @@
 <h1>Ours bikes</h1>
+
+
+<%@bikes.each do |bike|%>
+<ul>
+  <li> <%= bike.brand%> </li>
+  <li> <%= bike.type%> </li>
+  <li> <%= bike.condition%> </li>
+  <li> <%= bike.size%> </li>
+  <li> <%= link_to "See the bike", bike_path(bike)%> </li>
+</ul>
+<%end%>
+
+<ul>
+<li> <%= link_to "Add a bike", new_bike_path%></li>
+</ul>
