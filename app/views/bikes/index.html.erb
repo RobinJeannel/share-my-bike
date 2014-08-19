@@ -9,6 +9,7 @@
   <h5>Price: <%= t.price %></h5>
   <h5>Description: <%= t.description %></h5>
   <h5>Localisation: <%= t.localisation %></h5>
+  <%= image_tag t.photo_bike.url(:medium) %>
 
   <%= link_to 'Delete', bike_path(t.id), method: :delete %>
 <% end %>
