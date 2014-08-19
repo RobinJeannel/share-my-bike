@@ -1,0 +1,14 @@
+<h1>Nos Vélos</h1>
+
+<%= flash[:notice]%>
+
+<%= link_to 'New Bike', new_bike_path %>
+
+<% @bikes.each do |t| %>
+  <h2><%= link_to t.title, bike_path(t.id) %></h2>
+  <h5>Price: <%= t.price %></h5>
+  <h5>Description: <%= t.description %></h5>
+  <h5>Localisation: <%= t.localisation %></h5>
+
+  <%= link_to 'Delete', bike_path(t.id), method: :delete %>
+<% end %>
