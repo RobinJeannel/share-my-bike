@@ -11,26 +11,29 @@ class BikesController < ApplicationController
   def create
     Bike.create(bike_params)
     flash[:notice] ='Bike has been created'
+    redirect_to bikes_path
   end
 
   def show
-    @bike = Bike.find(bike_params[:id])
+    @bike = Bike.find(params[:id])
   end
 
   def edit
-    @bike = Bike.find(bike_params[:id])
+    @bike = Bike.find(params[:id])
   end
 
   def update
-    @bike = Bike.find(bike_params[:id])
+    @bike = Bike.find(params[:id])
     @bike.update(bike_params)
     flash[:notice] = "Bike has been updated"
+    redirect_to bike_path(params[:id])
   end
 
   def destroy
-    @bike = Bike.find(bike_params[:id])
+    @bike = Bike.find(params[:id])
     @bike.destroy
     flash[:notice] = 'Bike has been deleted'
+    redirect_to bikes_path
   end
 
   private
