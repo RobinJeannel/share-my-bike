@@ -1,0 +1,13 @@
+<ul>
+<div>
+<%= form_for @bike do |b| %>
+  <p>title : <%= b.text_field :title %></p>
+  <p>description : <%= b.text_field :description %></p>
+
+  <%= f.select :category, "Fixie"=>"Fixie", "ATV"=>"ATV", "City bike"=>"City bike" %>
+  <%= f.select :condition, "Brand new"=>"Brand new", "Fairly used" => "Fairly used", "Very used"=>"Very used" %>
+  <%= f.select :size, "XS"=>"XS", "S"=>"S", "M"=>"M", "L"=>"L", "XL"=>"XL" %>
+  <%= f.submit %>
+</div>
+<% end %>
+</ul>
