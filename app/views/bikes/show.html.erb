@@ -7,4 +7,7 @@
 <h5>Category: <%= @bike.category %></h5>
 <h5>Condition: <%= @bike.condition %></h5>
 <h5>Size: <%= @bike.size %></h5>
+
+<%= image_tag @bike.photo_bike.url(:medium) %>
 <%= link_to 'Edit', edit_bike_path(@bike.id) %>
+<%= link_to 'Bikes\' List', bikes_path %>

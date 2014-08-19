@@ -26,7 +26,7 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @bike.update(bike_params)
     flash[:notice] = "Bike has been updated"
-    redirect_to bike_path(params[:id])
+    redirect_to bike_path(@bike)
   end
 
   def destroy
