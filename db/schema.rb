@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140818175744) do
     t.string   "title"
     t.datetime "date"
     t.string   "description"
+    t.integer  "price"
     t.boolean  "disponibility"
     t.integer  "User_id"
     t.integer  "Bike_id"

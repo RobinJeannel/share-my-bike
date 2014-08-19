@@ -4,6 +4,7 @@ class CreateOffers < ActiveRecord::Migration
       t.string :title
       t.datetime :date
       t.string :description
+      t.integer :price
       t.boolean :disponibility
       t.references :User, index: true
       t.references :Bike, index: true
