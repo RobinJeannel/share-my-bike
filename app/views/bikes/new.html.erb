@@ -26,3 +26,7 @@
 <%= f.select :size, "XS"=>"XS", "S"=>"S", "M"=>"M", "L"=>"L", "XL"=>"XL" %>
 <%= f.submit %>
 <% end %>
+
+<%= form_for @bike, :url => bikes_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :photo_bike %>
+<% end %>
