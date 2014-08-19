@@ -2,10 +2,15 @@ class CreateBikes < ActiveRecord::Migration
   def change
     create_table :bikes do |t|
       t.string :brand
-      t.string :type
+      t.string :category
       t.string :condition
       t.string :size
 
+      t.string :title
+      t.integer :price
+      t.string :description
+      t.string :localisation
+# add references user : t.references :User, index: true
       t.timestamps
     end
   end

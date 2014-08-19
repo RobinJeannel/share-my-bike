@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818175744) do
+ActiveRecord::Schema.define(version: 20140818161312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20140818175744) do
     t.string   "category"
     t.string   "condition"
     t.string   "size"
+    t.string   "title"
+    t.integer  "price"
+    t.string   "description"
+    t.string   "localisation"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture_file_name"
@@ -28,21 +32,6 @@ ActiveRecord::Schema.define(version: 20140818175744) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
   end
-
-  create_table "offers", force: true do |t|
-    t.string   "title"
-    t.datetime "date"
-    t.string   "description"
-    t.integer  "price"
-    t.boolean  "disponibility"
-    t.integer  "User_id"
-    t.integer  "Bike_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "offers", ["Bike_id"], name: "index_offers_on_Bike_id", using: :btree
-  add_index "offers", ["User_id"], name: "index_offers_on_User_id", using: :btree
 
   create_table "reviews", force: true do |t|
     t.string   "title"
