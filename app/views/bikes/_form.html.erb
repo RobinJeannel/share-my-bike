@@ -3,76 +3,71 @@
   <br>
   <br>
   <div class="row">
-      <%= form_for @bike, :html => { :multipart => true } do |f| %>
-        <div class="col-xs-4">
+    <%= form_for @bike, :html => { :multipart => true } do |f| %>
+      <div class="col-xs-4">
         <%= f.label :title %>
         <%= f.text_field :title %>
-         </div>
+      </div>
 
-       <div class="col-xs-4">
+      <div class="col-xs-4">
         <%= f.label :description %>
         <%= f.text_field :description %>
-        </div>
+      </div>
 
 
-        <div class="col-xs-4">
+      <div class="col-xs-4">
         <%= f.label :brand %>
         <%= f.text_field :brand %>
-        </div>
-  </div>
-  <div class="row">
+      </div>
+
+      <div class="row">
         <div class="col-xs-4">
-        <%= f.label :price %>
-        <%= f.text_field :price %>
+          <%= f.label :price %>
+          <%= f.text_field :price %>
         </div>
 
         <div class="col-xs-4">
-        <%= f.label :localisation %>
-        <%= f.text_field :localisation %>
+          <%= f.label :localisation %>
+          <%= f.text_field :localisation %>
         </div>
-  </div>
-  <div class="row">
+      </div>
 
+      <div class="row">
         <div class="col-xs-4">
-        <%= f.label :category %>
-        <%= f.select :category, "Fixie"=>"Fixie", "ATV"=>"ATV", "City bike"=>"City bike" %>
-        </div>
-        <div class="col-xs-4">
-        <%= f.label :condition %>
-        <%= f.select :condition, "Brand new"=>"Brand new", "Fairly used" => "Fairly used", "Very used"=>"Very used" %>
+          <%= f.label :category %>
+          <%= f.select :category, "Fixie"=>"Fixie", "ATV"=>"ATV", "City bike"=>"City bike" %>
         </div>
         <div class="col-xs-4">
-        <%= f.label :size %>
-        <%= f.select :size, "XS"=>"XS", "S"=>"S", "M"=>"M", "L"=>"L", "XL"=>"XL" %>
+          <%= f.label :condition %>
+          <%= f.select :condition, "Brand new"=>"Brand new", "Fairly used" => "Fairly used", "Very used"=>"Very used" %>
         </div>
+        <div class="col-xs-4">
+          <%= f.label :size %>
+          <%= f.select :size, "XS"=>"XS", "S"=>"S", "M"=>"M", "L"=>"L", "XL"=>"XL" %>
+        </div>
+      </div>
 
-  </div>
-
-    <br>
-  <div class="row">
-
+      <br>
+      <div class="row">
         <div class="col-xs-4"></div>
         <div class="col-xs-4">
-        <%= f.file_field :photo_bike %>
+          <%= f.file_field :photo_bike %>
         </div>
         <div class="col-xs-4"></div>
+      </div>
+
+
+      <br>
+      <div class='row'>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4">
+       <%= f.submit "Add a bike", class: "btn btn-danger" %>
+      </div>
+
+      <div class="col-xs-4"></div>
+
+    <% end %>
   </div>
-
-
-    <br>
-  <div class='row'>
-          <div class="col-xs-4"> </div>
-          <div class="col-xs-4">
-
-              <input class="btn btn-danger" name="commit" type="submit" value="Add a bike">
-             </div>
-
-          <div class="col-xs-4"></div>
-    </div>
-
-      <% end %>
-       </div>
-</div>
 </div>
 
 
