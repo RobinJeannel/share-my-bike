@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140819121234) do
     t.integer  "price"
     t.string   "description"
     t.string   "localisation"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture_file_name"
@@ -37,8 +36,6 @@ ActiveRecord::Schema.define(version: 20140819121234) do
     t.integer  "photo_bike_file_size"
     t.datetime "photo_bike_updated_at"
   end
-
-  add_index "bikes", ["user_id"], name: "index_bikes_on_user_id", using: :btree
 
   create_table "reviews", force: true do |t|
     t.string   "title"
