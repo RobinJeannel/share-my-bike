@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
       <%= form_for @bike, :html => { :multipart => true } do |f| %>
@@ -18,7 +19,7 @@
         <%= f.label :price %>
         <%= f.text_field :price %>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-4" id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" autocomplete="off" >
         <%= f.label :localisation %>
         <%= f.text_field :localisation %>
         </div>
@@ -41,3 +42,14 @@
       <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
