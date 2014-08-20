@@ -1,9 +1,18 @@
-.container{
-  background-color: red;
+.container{text-align: center;
 }
 
 .vertical-spacer {
-  height: 8em;
+  height: 20em;
 }
+
+
+.row {
+margin-left: -15px;
+margin-right: -15px;
+padding-top: 10px;
+}
+
+
+
 
 
