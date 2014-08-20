@@ -3,7 +3,7 @@
 
 <%= flash[:notice]%>
 
-<%= link_to 'New Bike', new_bike_path %>
+<%= link_to 'New Bike', new_bike_path, class: 'btn btn-primary' %>
 
 <% @bikes.each do |t| %>
   <h2><%= link_to t.title, bike_path(t.id) %></h2>
