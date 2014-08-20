@@ -10,7 +10,7 @@ class CreateBikes < ActiveRecord::Migration
       t.integer :price
       t.string :description
       t.string :localisation
-      t.references :User, index: true
+      t.references :user, index: true
       t.timestamps
     end
   end
