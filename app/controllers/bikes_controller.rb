@@ -9,7 +9,8 @@ class BikesController < ApplicationController
   end
 
   def create
-    Bike.create(bike_params)
+    user = User.find(current_user.id)
+    user.bikes.create(bike_params)
     flash[:notice] ='Bike has been created'
     redirect_to bikes_path
   end
@@ -39,7 +40,7 @@ class BikesController < ApplicationController
   private
 
     def bike_params
-      params.require(:bike).permit(:photo_bike, :brand, :category, :condition, :size, :title, :price, :description, :localisation)
+      params.require(:bike).permit(:user_id,:photo_bike, :brand, :category, :condition, :size, :title, :price, :description, :localisation)
     end
 end
 

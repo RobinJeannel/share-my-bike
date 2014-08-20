@@ -1,28 +1,39 @@
 
 <div class="container">
+  <br>
+  <br>
+  <br>
   <div class="row">
       <%= form_for @bike, :html => { :multipart => true } do |f| %>
         <div class="col-xs-4">
         <%= f.label :title %>
         <%= f.text_field :title %>
-        </div>
-         <div class="vertical-spacer"></div>
-        <div class="col-xs-4">
+         </div>
+
+       <div class="col-xs-4">
         <%= f.label :description %>
         <%= f.text_field :description %>
         </div>
+
+
         <div class="col-xs-4">
         <%= f.label :brand %>
         <%= f.text_field :brand %>
         </div>
+  </div>
+  <div class="row">
         <div class="col-xs-4">
         <%= f.label :price %>
         <%= f.text_field :price %>
         </div>
         <div class="col-xs-4" id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" autocomplete="off" >
+
         <%= f.label :localisation %>
         <%= f.text_field :localisation %>
         </div>
+  </div>
+  <div class="row">
+
         <div class="col-xs-4">
         <%= f.label :category %>
         <%= f.select :category, "Fixie"=>"Fixie", "ATV"=>"ATV", "City bike"=>"City bike" %>
@@ -35,15 +46,42 @@
         <%= f.label :size %>
         <%= f.select :size, "XS"=>"XS", "S"=>"S", "M"=>"M", "L"=>"L", "XL"=>"XL" %>
         </div>
+
+  </div>
+
+    <br>
+  <div class="row">
+
+        <div class="col-xs-4"></div>
         <div class="col-xs-4">
         <%= f.file_field :photo_bike %>
-        <%= f.submit %>
         </div>
-      <% end %>
+        <div class="col-xs-4"></div>
   </div>
+<<<<<<< HEAD
 </div>
 
 
+=======
+
+
+    <br>
+  <div class='row'>
+          <div class="col-xs-4"> </div>
+          <div class="col-xs-4">
+
+              <input class="btn btn-danger" name="commit" type="submit" value="Add a bike">
+             </div>
+
+          <div class="col-xs-4"></div>
+    </div>
+
+      <% end %>
+       </div>
+</div>
+</div>
+
+>>>>>>> master
 
 
 

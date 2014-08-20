@@ -1,16 +1,36 @@
 <%= render partial: "./navbar" %>
-<h1>Nos Vélos</h1>
-
 <%= flash[:notice]%>
 
-<%= link_to 'New Bike', new_bike_path %>
+<div class="titre">
+  <h1>Nos Vélos</h1>
+  <%= link_to 'New Bike', new_bike_path, class: 'btn btn-primary' %>
+</div>
 
-<% @bikes.each do |t| %>
-  <h2><%= link_to t.title, bike_path(t.id) %></h2>
-  <h5>Price: <%= t.price %></h5>
-  <h5>Description: <%= t.description %></h5>
-  <h5>Localisation: <%= t.localisation %></h5>
-  <%= image_tag t.photo_bike.url(:thumb) %>
+<div class="bike">
+  <table class="table table-striped">
+    <thead>
+      <td></td>
+      <td>Title</td>
+      <td>Price</td>
+      <td>Description</td>
+      <td>Localisation</td>
+    </thead>
+    <tbody>
+    <% @bikes.each do |t| %>
+    <tr>
+      <td><%= image_tag t.photo_bike.url(:thumb) %></td>
+      <td><%= t.title%></td>
+      <td><%= t.price %> €</td>
+      <td><%= t.description %></td>
+      <td><%= t.localisation %></td>
+      <td><%= link_to 'Show', bike_path(t.id) %></td>
+      <% if current_user.id == t.id %>
+        <td><%= link_to 'Edit', edit_bike_path(t.id) %></td>
+        <td><%= link_to 'Delete', bike_path(t.id), method: :delete %></td>
+      <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
-  <%= link_to 'Delete', bike_path(t.id), method: :delete %>
-<% end %>
