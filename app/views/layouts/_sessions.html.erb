@@ -1,13 +1,21 @@
 
-<button type="button" class="btn btn-default">
 
 <% if user_signed_in? %>
-  <%= current_user.email %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
-<% else %>
+  <li class="dropdown">
+    <% if current_user.provider %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= image_tag current_user.picture, class: "img img-circle" %><b class="caret"></b></a>
+      <% else %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b></a>
+    <% end %>
+
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  </li>
+
+     <% else %>
 
   <%= link_to 'Sign up', new_user_registration_path %>
   <%= link_to 'Sign in', new_user_session_path %>
 <% end %>
 
-</button>
+
+

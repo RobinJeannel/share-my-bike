@@ -18,6 +18,10 @@ ruby '2.1.2'
 gem 'thin'
 gem 'rails_12factor'
 
+gem 'omniauth-facebook'
+gem 'koala'
+
+
 gem 'figaro'
 gem 'aws-sdk'
 gem 'paperclip'
