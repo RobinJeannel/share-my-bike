@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'devise'
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -18,7 +17,6 @@ ruby '2.1.2'
 gem 'thin'
 gem 'rails_12factor'
 
-gem 'figaro'
 gem 'aws-sdk'
 gem 'paperclip'
 # Use jquery as the JavaScript library
@@ -37,6 +35,16 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
+# Devise with fb-omniauth extension
+gem "devise"
+gem 'omniauth-facebook'
+
+# For extended use of fb API (getting user's friends infos, posting on his wall..)
+gem 'koala'
+
+# For handling API keys
+gem 'figaro', '~> 1.0.0.rc1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
